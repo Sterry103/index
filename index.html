@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>টম এন্ড জেরি বাংলায়</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eef2f6; /* হালকা নীলচে ব্যাকগ্রাউন্ড */
+            color: #333;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2c3e50; /* গাঢ় নীল টেক্সট */
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #searchInput {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            outline: none;
+            box-sizing: border-box; /* padding সহ width গণনা করবে */
+        }
+
+        #searchInput:focus {
+            border-color: #007bff;
+        }
+
+        #videoCount {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* রেসপনসিভ গ্রিড */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            text-align: left;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 150px; /* কার্ডের ন্যূনতম উচ্চতা */
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-link {
+            font-size: 1.3em;
+            color: #007bff; /* নীল লিঙ্ক কালার */
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block; /* পুরো কার্ড ক্লিকযোগ্য করার জন্য */
+        }
+
+        .video-link:hover {
+            color: #0056b3; /* হোভার করলে গাঢ় নীল */
+        }
+
+        .video-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            body {
+                padding: 15px;
+            }
+            .search-container {
+                padding: 10px;
+            }
+            .video-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>টম এন্ড জেরি বাংলায়</h1>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterVideos()" placeholder="ভিডিও খুঁজুন...">
+        <p id="videoCount"></p>
+    </div>
+
+    <div class="video-grid" id="videoList">
+        <div class="video-card">
+            <a href="**https://drive.google.com/file/d/11QXchpDDPF6D1hton1HW5T46DnfJfWMj/view?usp=drivesdk**" class="video-link" data-title="পর্ব ১ : জেরি লাদেন">লেকচার ১: পর্ব ১ : জেরি লাদেন</a>
+            <p class="video-description">টম এন্ড জেরি মার্জিত বাংলা ভাষায়।
+পর্ব :- ০১ জেরি লাদেন (The yunkee doodle) English episode :11।</p>
+        </div>
+
+        <div class="video-card">
+            <a href="**https://drive.google.com/file/d/11ryIZvf7VONVFDFVIA2IkxlN7pBPo6TD/view?usp=drivesdk**" class="video-link" data-title="পর্ব ২ : টমের প্রিয়তমা">পর্ব ২ : টমের প্রিয়তমা</a>
+            <p class="video-description">টম এন্ড জেরি মার্জিত বাংলা ভাষায়।
+পর্ব :- ০২ টমের প্রিয়তমা (Solid Serenade) English episode :26 ।</p>
+        </div>
+
+        <div class="video-card">
+            <a href="**https://drive.google.com/file/d/11NFwAOtSLUZcbTToeAAPjcg3Acd5LmiK/view?usp=drivesdk**" class="video-link" data-title="পর্ব ৩ : গল্ফ প্লেয়ার টম ">পর্ব ৩ : গল্ফ প্লেয়ার টম </a>
+            <p class="video-description">টম এন্ড জেরি মার্জিত বাংলা ভাষায়।
+পর্ব :- ০৩, গল্ফ প্লেয়ার টম (Tee for Two)।</p>
+        </div>
+
+        <div class="video-card">
+            <a href="**https://drive.google.com/file/d/11PSHHOAsnSwYceISYBcJwl5AOQ9yZl-D/view?usp=drivesdk**" class="video-link" data-title="৪ : নিউইয়র্কে জেরি">৪ : নিউইয়র্কে জেরি</a>
+            <p class="video-description">জেরি গেলো নিউইয়র্কে | Episode 4 | Mouse in Manhattan | Tom and Jerry Bangla old classic dubbed।</p>
+        </div>
+
+        </div>
+
+    <script>
+        function filterVideos() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const videoList = document.getElementById('videoList');
+            const videoCards = videoList.getElementsByClassName('video-card');
+            let visibleCount = 0;
+
+            for (let i = 0; i < videoCards.length; i++) {
+                const link = videoCards[i].getElementsByClassName('video-link')[0];
+                const title = link.getAttribute('data-title').toLowerCase(); // data-title অ্যাট্রিবিউট থেকে নাম নেবে
+                if (title.includes(filter)) {
+                    videoCards[i].style.display = '';
+                    visibleCount++;
+                } else {
+                    videoCards[i].style.display = 'none';
+                }
+            }
+            document.getElementById('videoCount').innerText = `মোট ভিডিও: ${visibleCount}টি`;
+        }
+
+        // পেজ লোড হওয়ার সাথে সাথে ভিডিও সংখ্যা দেখানোর জন্য
+        document.addEventListener('DOMContentLoaded', () => {
+            filterVideos(); // প্রাথমিক সংখ্যা দেখানোর জন্য কল করুন
+        });
+    </script>
+
+</body>
+</html>
